@@ -22,7 +22,7 @@ totalprice:NewItem.price
             }
             else{
                 existingItem.quantity++;
-                existingItem.totalprice=existingItem.price+NewItem.price
+                existingItem.totalprice=existingItem.totalprice+NewItem.price
             }
         },
         RemoveItem(state,action){
@@ -34,6 +34,7 @@ totalprice:NewItem.price
             }
             else{
                 existingItem.quantity--;
+                existingItem.totalprice=existingItem.totalprice-existingItem.price;
             }
         }
     }
