@@ -5,13 +5,17 @@ import Products from './components/Shop/Products';
 import { useSelector,useDispatch } from 'react-redux';
 import Notification from './components/UI/Notification';
 import { sendCartData } from './Store/Cart-actions';
+import { FetchData } from './Store/Cart-actions';
 
 let isinitial=true
 function App() {
   const ShowCrat=useSelector(state=>state.Ui.ShowCard);
   const Notif=useSelector(state=>state.Ui.notification);
   const cart= useSelector(state=>state.Cart)
-  const dispatch=useDispatch()
+  const dispatch=useDispatch();
+  useEffect(()=>{
+    dispatch(FetchData())
+  },[dispatch])
   useEffect(()=>
   {if(isinitial){
     isinitial=false;

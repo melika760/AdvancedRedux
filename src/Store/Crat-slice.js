@@ -8,7 +8,7 @@ const CartSlice=createSlice({
     },
     reducers:{
         replaceCart(state, action) {
-            state.totalQuantity = action.payload.totalQuantity;
+            state.totalquantity = action.payload.totalquantity;
             state.items = action.payload.items;
           },
         addItem(state,action){
